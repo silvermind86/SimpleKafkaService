@@ -1,0 +1,21 @@
+kafka:
+  bootstrap-servers: 127.0.0.1:9092
+  topic.message-box: message.box
+  topic.treated-message-box: treated.message.box
+  consumergroup: simplemessage
+  producer:
+    max:
+      request:
+        size: 231072000
+    batch-size: 60000000
+    buffer-memory: 60000000
+    bootstrap-servers: 127.0.0.1:9092
+    client-id: simple-message-producer
+  consumer:
+    group-id: simplemessage
+    auto-offset-reset: earliest
+    enable-auto-commit: false
+
+spring:
+  application:
+    name: simple-messenger
